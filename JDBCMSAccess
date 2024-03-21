@@ -13,7 +13,7 @@ public class JDBCMSAccess {
 
         //Loop through each row and print the table
         while (rs.next()) {
-          System.out.println(rs.getString(1))+"\t" +rs.getString(2) +"\n"
+          System.out.println(rs.getString(1))+"\t" +rs.getString(2) +"\n")
         }
         //VITAL: Close the connection
         rs.close();
