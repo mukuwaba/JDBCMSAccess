@@ -9,9 +9,15 @@ public class JDBCMSAccess {
        //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
         Statement st = con.createStatement();
 
-        ResultSet rs = st.executeQuery("Select * FROM Student")
+        ResultSet rs = st.executeQuery("Select * FROM Student");
 
+        //Loop through each row and print the table
+        while (rs.next()) {
+          System.out.println(rs.getString(1))+"\t" +rs.getString(2) +"\n"
+        }
         //VITAL: Close the connection
+        rs.close();
+        st.close();
         con.close();
 
     }//End:main
