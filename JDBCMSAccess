@@ -1,0 +1,18 @@
+import java.sql.*;
+
+public class JDBCMSAccess {
+    public static void main(String[] args) {// m + TAB
+
+        //Create a reference to the Connection object, which allows us to red/wrte to the DBMS
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/user/mukuwa.baffoe/MB2.accdb");
+
+       //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
+        Statement st = con.createStatement();
+
+        ResultSet rs = st.executeQuery("Select * FROM Student")
+
+        //VITAL: Close the connection
+        con.close();
+
+    }//End:main
+}//End:class
