@@ -4,7 +4,7 @@ public class JDBCMSAccess {
     public static void main(String[] args) {// m + TAB
 
         //Create a reference to the Connection object, which allows us to red/wrte to the DBMS
-        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/user/mukuwa.baffoe/MB2.accdb");
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/users/mukuwa.baffoe/MB2.accdb");
 
        //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
         Statement st = con.createStatement();
