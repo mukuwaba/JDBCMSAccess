@@ -1,19 +1,20 @@
 import java.sql.*;
 
 public class JDBCMSAccess {
-    public static void main(String[] args) {// m + TAB
+    public static void main(String[] args) throws SQLException {// m + TAB
 
-        //Create a reference to the Connection object, which allows us to red/wrte to the DBMS
-        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/users/mukuwa.baffoe/MB2.accdb");
+        //Create a reference to the Connection object, which allows us to red/write to the DBMS
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/mukuwa.baffoe/MB.accdb");
+                //"C:/Users/mukuwa.baffoe/Documents/MB.accdb");
 
-       //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
+        //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
         Statement st = con.createStatement();
 
         ResultSet rs = st.executeQuery("Select * FROM Student");
 
         //Loop through each row and print the table
         while (rs.next()) {
-          System.out.println(rs.getString(1))+"\t" +rs.getString(2) +"\n")
+            System.out.println(rs.getString(1)+"\t" +rs.getString(2) +"\t" + rs.getString(3) + "\n");
         }
         //VITAL: Close the connection
         rs.close();
