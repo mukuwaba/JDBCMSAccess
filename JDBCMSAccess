@@ -5,8 +5,8 @@ public class JDBCMSAccess {
 
         //Create a reference to the Connection object, which allows us to red/write to the DBMS
         Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/mukuwa.baffoe/MB.accdb");
-                //"C:/Users/mukuwa.baffoe/Documents/MB.accdb");
-
+               //MB is the name of my Access database and .accdb is the file extension
+                //In database tools,click Compact and Repair
         //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
         Statement st = con.createStatement();
 
