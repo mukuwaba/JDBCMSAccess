@@ -12,7 +12,7 @@ public class JDBCMSAccess {
         // In database tools, click Compact and Repair --> clears bugs and errors
         //Create a reference to the STATEMENT object, which allows us to EXECUTE a SQL statement/query
         Statement st = con.createStatement();
-        
+
         //////Optional Code///////
         // Scanner stringScanner = new Scanner(System.in);
         // String useInput = stringScanner.next();
@@ -20,19 +20,27 @@ public class JDBCMSAccess {
         ////////////////////////
 
         ResultSet rs = st.executeQuery("Select * FROM Student");
+        //Select * From Student --> hard code
         //Make sure the table within Access is named Student
         //The program will pull information within this table
         //Can change between tables
-        
+
         //Get header row information
         ResultSetMetaData rsmd = rs.getMetaData();
-        //The metadata of a table is information about the table itself. How many columns, etc. 
+        //The metadata of a table is information about the table itself. How many columns, etc.
         //rsmd- result set meta data
-        
-        
+        int numberColumns = rsmd.getColumnCount();
+        //gets the number of columns from Acccess database
+
+
         //Print the header row, per se.
-        
-        
+        for(int count =1; count <= numberColumns; count++) {
+            System.out.printf("%s\t", rsmd.getColumnName(count));
+        }
+            System.out.println();
+
+
+
 
         //Loop through each row and print the table
         while (rs.next()) {
