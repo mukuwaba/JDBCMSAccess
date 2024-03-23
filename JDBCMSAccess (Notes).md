@@ -6,7 +6,9 @@ public class JDBCMSAccess {
         //throws SQLException --> method may throw an exception related to SQL operations
 
         //Create a reference to the Connection object, which allows us to red/write to the DBMS
-        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/mukuwa.baffoe/MB.accdb");
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/mukuw/MB.accdb");
+        //School Path:  jdbc:ucanaccess://C:/Users/mukuwa.baffoe/MB.accdb
+        //Home path:    jdbc:ucanaccess://C:/Users/mukuw/Documents/MB.accdb
         //Connects to Access Database(MB) [@path]
         //Uses DriverManager to establish connection
 
@@ -87,3 +89,15 @@ public class JDBCMSAccess {
 
     }//End:main
 }//End:class
+
+//HOW TO LINK A DATABASE//
+//go to 4 lines at the top that show File, View, etc
+//Click 'Project Structure'
+//Click 'Libraries'
+//Click '+'
+//Click 'From Maven'
+//Type/Paste: net.sf.ucanaccess:ucanaccess:5.0.0 
+//Click 'Ok' x2
+
+//Won't run unless this is done
+//should see 'net.sf.ucanaccess:ucanaccess:5.0.0' after clicking 'External Libraries' on sidebar
